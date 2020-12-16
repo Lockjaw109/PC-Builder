@@ -1,5 +1,5 @@
 """
-Name: 
+Name:
 Date: November 30th, 2020
 Purpose: Make a python application that presents the user with different parts
 for a computer and they can select the ones they want to build their own PC.
@@ -139,7 +139,6 @@ print(".")
 print(".")
 
 
-  
 class StartScreen():
 
     def __init__(self):
@@ -156,7 +155,7 @@ class StartScreen():
 
         self.createStartButton()
         self.createMainImage()
-        
+
     def createStartButton(self):
          try:
             startImage = PhotoImage(file="start.gif")
@@ -178,7 +177,7 @@ class StartScreen():
     def createMainImage(self):
         try:
             mainImage = PhotoImage(file="main.gif")
-            
+
             self.mainPhoto =\
             Label(self.topFrame,
                   anchor="center",
@@ -193,14 +192,14 @@ class StartScreen():
             print(".")
             print(".")
             print(".")
-            
+
         self.mainPhoto.pack()
 
     def startButtonClick(self):
         currentType = "Computer Case"
         for part in partList:
             if part[5] == str(currentType) and part[6] == "TL":
-                
+
                 partNameTL = ("%s"%(part[0]))
                 print("Part name TL has been set to %s." %(partNameTL))
                 print(".")
@@ -221,9 +220,9 @@ class StartScreen():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "TR":
-                
+
                 partNameTR = ("%s"%(part[0]))
                 print("Part name TR has been set to %s." %(partNameTR))
                 print(".")
@@ -244,9 +243,9 @@ class StartScreen():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "BL":
-                
+
                 partNameBL = ("%s"%(part[0]))
                 print("Part name BL has been set to %s." %(partNameBL))
                 print(".")
@@ -269,7 +268,7 @@ class StartScreen():
                 print(".")
 
             elif part[5] == str(currentType) and part[6] == "BR":
-                
+
                 partNameBR = ("%s"%(part[0]))
                 print("Part name BR has been set to %s." %(partNameBR))
                 print(".")
@@ -318,13 +317,13 @@ class ComputerBuilder():
         self.topFrameR.pack(side=RIGHT)
         self.bottomFrameL.pack(side=LEFT)
         self.bottomFrameR.pack(side=RIGHT)
-    
+
         self.loadWidgets()
 
         self.mainwindow.mainloop()
 
     def loadWidgets(self):
-        
+
         self.createExitButton()
         self.createLeftArrow()
         self.createRightArrow()
@@ -347,7 +346,7 @@ class ComputerBuilder():
         self.createTotalWattLabel()
         self.createTotalPriceLabel()
 
-        
+
     def createExitButton(self):
         try:
             exitImage = PhotoImage(file="exit.gif")
@@ -358,7 +357,7 @@ class ComputerBuilder():
                                 command = lambda: self.exitButtonClick(),
                                 image=exitImage)
             exitButton.pack(side=LEFT)
-            
+
         except Exception as exception:
             print("Problem loading exit button")
             print(".")
@@ -384,7 +383,7 @@ class ComputerBuilder():
             print(".")
             print(".")
             print(".")
-        
+
     def createRightArrow(self):
         try:
             rightArrowImage = PhotoImage(file="rightarrow.gif")
@@ -406,7 +405,7 @@ class ComputerBuilder():
     def createPartImageOne(self):
             try:
                 partImageOne = PhotoImage(file="%s"%(currentImageTL))
-            
+
                 self.partPhotoOne =\
                 Label(self.topFrameL,
                       anchor="center",
@@ -420,12 +419,12 @@ class ComputerBuilder():
                 print("Error: %s" %(exception))
                 print(".")
                 print(".")
-                print(".")    
+                print(".")
 
     def createPartImageTwo(self):
             try:
                 partImageTwo = PhotoImage(file="%s" %(currentImageTR))
-            
+
                 self.partPhotoTwo =\
                 Label(self.topFrameR,
                       anchor="center",
@@ -440,13 +439,13 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-            
-        
+
+
 
     def createPartImageThree(self):
             try:
                 partImageThree = PhotoImage(file="%s" %(currentImageBL))
-            
+
                 self.partPhotoThree =\
                 Label(self.bottomFrameL,
                       anchor="center",
@@ -462,16 +461,16 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-            
-        
-            
+
+
+
 
 
 
     def createPartImageFour(self):
             try:
                 partImageFour = PhotoImage(file="%s" %(currentImageBR))
-            
+
                 self.partPhotoFour =\
                 Label(self.bottomFrameR,
                       anchor="center",
@@ -486,9 +485,9 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-            
-        
-            
+
+
+
     def createInfoButtonTL(self):
         try:
             infoImageTL = PhotoImage(file="info.gif")
@@ -506,7 +505,7 @@ class ComputerBuilder():
             print(".")
             print(".")
             print(".")
-    
+
     def createInfoButtonTR(self):
         try:
             infoImageTR = PhotoImage(file="info.gif")
@@ -578,7 +577,7 @@ class ComputerBuilder():
             print(".")
             print(".")
             print(".")
-    
+
     def createSelectPartTR(self):
         try:
             selectImageTR = PhotoImage(file="select.gif")
@@ -642,10 +641,10 @@ class ComputerBuilder():
                              font=("Helvetica", 18),
                              wraplength=400)
         self.labelTopLeft.pack(side=BOTTOM, anchor=W)
-        
-    
+
+
     def createLabelTR(self):
-        
+
         self.labelTR = StringVar()
         self.labelTL.set("%s"%(partNameTR))
         self.labelTopRight = Label(self.topFrameR,
@@ -653,7 +652,7 @@ class ComputerBuilder():
                              font=("Helvetica", 18),
                              wraplength=400)
         self.labelTopRight.pack(side=BOTTOM, anchor=W)
-        
+
     def createLabelBL(self):
 
         self.labelBL = StringVar()
@@ -663,7 +662,7 @@ class ComputerBuilder():
                              font=("Helvetica", 18),
                              wraplength=400)
         self.labelBottomLeft.pack(side=BOTTOM, anchor=W)
-        
+
     def createLabelBR(self):
 
         self.labelBR = StringVar()
@@ -673,7 +672,7 @@ class ComputerBuilder():
                              font=("Helvetica", 18),
                              wraplength=400)
         self.labelBottomRight.pack(side=BOTTOM, anchor=W)
-    
+
     def createTotalWattLabel(self):
 
         for part in selectedPartList:
@@ -686,7 +685,7 @@ class ComputerBuilder():
                              font=("Helvetica", 18),
                              wraplength=400)
         self.labelTotalWatt.pack(side=LEFT, anchor=W)
-        
+
     def createTotalPriceLabel(self):
         for part in selectedPartList:
             totalPriceCounter += part[1]
@@ -706,22 +705,22 @@ class ComputerBuilder():
     def leftArrowClick(self):
 
         loadWidgets()
-        
+
         partChangerLeft()
-    
+
     def rightArrowClick(self):
 
         loadWidgets()
-        
+
         partChangerRight()
 
     def partChangerRight(self):
-        
+
         if (clickCounter < 7):
             clickCounter += 1
         else:
             print("You have reached the end!")
-            
+
         if (clickCounter <= 7):
             if clickCounter == 0:
                 currentType = "Computer Case"
@@ -773,10 +772,10 @@ class ComputerBuilder():
                 print(".")
             else:
                 print("Error: No Current Type")
-                
+
         for part in partList:
             if part[5] == str(currentType) and part[6] == "TL":
-                
+
                 partNameTL = ("%s"%(part[0]))
                 print("Part name TL has been set to %s." %(partNameTL))
                 print(".")
@@ -797,9 +796,9 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "TR":
-                
+
                 partNameTR = ("%s"%(part[0]))
                 print("Part name TR has been set to %s." %(partNameTR))
                 print(".")
@@ -820,9 +819,9 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "BL":
-                
+
                 partNameBL = ("%s"%(part[0]))
                 print("Part name BL has been set to %s." %(partNameBL))
                 print(".")
@@ -845,7 +844,7 @@ class ComputerBuilder():
                 print(".")
 
             elif part[5] == str(currentType) and part[6] == "BR":
-                
+
                 partNameBR = ("%s"%(part[0]))
                 print("Part name BR has been set to %s." %(partNameBR))
                 print(".")
@@ -868,12 +867,12 @@ class ComputerBuilder():
                 print(".")
 
     def partChangerLeft(self):
-        
+
         if (0 < clickCounter):
             clickCounter -= 1
         else:
             print("You have reached the beginning!")
-            
+
         if (0 <= clickCounter):
             if clickCounter == 0:
                 currentType = "Computer Case"
@@ -925,10 +924,10 @@ class ComputerBuilder():
                 print(".")
             else:
                 print("Error: No Current Type")
-                
+
         for part in partList:
             if part[5] == str(currentType) and part[6] == "TL":
-                
+
                 partNameTL = ("%s"%(part[0]))
                 print("Part name TL has been set to %s." %(partNameTL))
                 print(".")
@@ -949,9 +948,9 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "TR":
-                
+
                 partNameTR = ("%s"%(part[0]))
                 print("Part name TR has been set to %s." %(partNameTR))
                 print(".")
@@ -972,9 +971,9 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-                
+
             elif part[5] == str(currentType) and part[6] == "BL":
-                
+
                 partNameBL = ("%s"%(part[0]))
                 print("Part name BL has been set to %s." %(partNameBL))
                 print(".")
@@ -997,7 +996,7 @@ class ComputerBuilder():
                 print(".")
 
             elif part[5] == str(currentType) and part[6] == "BR":
-                
+
                 partNameBR = ("%s"%(part[0]))
                 print("Part name BR has been set to %s." %(partNameBR))
                 print(".")
@@ -1018,26 +1017,26 @@ class ComputerBuilder():
                 print(".")
                 print(".")
                 print(".")
-            
+
 
     def selectButtonClickTL(self):
         for part in partList:
             if part[0] == partNameTL:
                 if part[6] == "TL":
                     selectedPartList.append([str(part[0]), str(part[1]), str(part[2]), str(part[3]), str(part[4]), str(part[5]), str(part[6]), str(part[7]), str(part[8])],)
-            
+
     def selectButtonClickTR(self):
         for part in partList:
             if part[0] == partNameTR:
                 if part[6] == "TR":
                     selectedPartList.append([str(part[0]), str(part[1]), str(part[2]), str(part[3]), str(part[4]), str(part[5]), str(part[6]), str(part[7]), str(part[8])],)
-    
+
     def selectButtonClickBL(self):
         for part in partList:
             if part[0] == partNameBL:
                 if part[6] == "BL":
                     selectedPartList.append([str(part[0]), str(part[1]), str(part[2]), str(part[3]), str(part[4]), str(part[5]), str(part[6]), str(part[7]), str(part[8])],)
-            
+
     def selectButtonClickBR(self):
         for part in partList:
             if part[0] == partNameBR:
@@ -1046,7 +1045,7 @@ class ComputerBuilder():
     """
     def compatabilityChecker(self):
 
-        
+
     """
 
     def infoButtonTLClick(self):
@@ -1067,7 +1066,7 @@ class ComputerBuilder():
 
 
 class InfoButtonTL():
-    
+
     def __init__(self, partNameTL):
 
         for part in partList:
@@ -1088,7 +1087,7 @@ class InfoButtonTL():
 
         self.window.title("More Info about %s" %(partName))
         self.window.geometry("1240x1770")
-        
+
         titleText = StringVar()
         titleText.set("%s" %(partName))
         self.title = Label(self.window,
@@ -1096,7 +1095,7 @@ class InfoButtonTL():
                             font=("Helvetica", 25),
                             wraplength=500)
         self.title.pack(side=TOP)
-        
+
         mainText = StringVar()
         mainText.set("%s" %(partDesc))
         self.mainText = Label(self.window,
@@ -1107,7 +1106,7 @@ class InfoButtonTL():
 
         try:
             partImage = PhotoImage(file=str(partImage))
-            
+
             self.partPhoto =\
             Label(self.window,
                   anchor="center",
@@ -1116,13 +1115,13 @@ class InfoButtonTL():
             self.partPhoto.image = partImage
 
         except Exception as exception:
-            
+
             print(exception)
-            
+
         self.partPhoto.pack()
 
 class InfoButtonTR():
-    
+
     def __init__(self, partNameTR):
 
         for part in partList:
@@ -1143,7 +1142,7 @@ class InfoButtonTR():
 
         self.window.title("More Info about %s" %(partName))
         self.window.geometry("1240x1770")
-        
+
         titleText = StringVar()
         titleText.set("%s" %(partName))
         self.title = Label(self.window,
@@ -1151,7 +1150,7 @@ class InfoButtonTR():
                             font=("Helvetica", 25),
                             wraplength=500)
         self.title.pack(side=TOP)
-        
+
         mainText = StringVar()
         mainText.set("%s" %(partDesc))
         self.mainText = Label(self.window,
@@ -1162,7 +1161,7 @@ class InfoButtonTR():
 
         try:
             partImage = PhotoImage(file=str(partImage))
-            
+
             self.partPhoto =\
             Label(self.window,
                   anchor="center",
@@ -1171,13 +1170,13 @@ class InfoButtonTR():
             self.partPhoto.image = partImage
 
         except Exception as exception:
-            
+
             print(exception)
-            
+
         self.partPhoto.pack()
 
 class InfoButtonBL():
-    
+
     def __init__(self, partNameBL):
 
         for part in partList:
@@ -1198,7 +1197,7 @@ class InfoButtonBL():
 
         self.window.title("More Info about %s" %(partName))
         self.window.geometry("1240x1770")
-        
+
         titleText = StringVar()
         titleText.set("%s" %(partName))
         self.title = Label(self.window,
@@ -1206,7 +1205,7 @@ class InfoButtonBL():
                             font=("Helvetica", 25),
                             wraplength=500)
         self.title.pack(side=TOP)
-        
+
         mainText = StringVar()
         mainText.set("%s" %(partDesc))
         self.mainText = Label(self.window,
@@ -1217,7 +1216,7 @@ class InfoButtonBL():
 
         try:
             partImage = PhotoImage(file=str(partImage))
-            
+
             self.partPhoto =\
             Label(self.window,
                   anchor="center",
@@ -1226,13 +1225,13 @@ class InfoButtonBL():
             self.partPhoto.image = partImage
 
         except Exception as exception:
-            
+
             print(exception)
-            
+
         self.partPhoto.pack()
 
 class InfoButtonBR():
-    
+
     def __init__(self, partNameBR):
 
         for part in partList:
@@ -1253,7 +1252,7 @@ class InfoButtonBR():
 
         self.window.title("More Info about %s" %(partName))
         self.window.geometry("1240x1770")
-        
+
         titleText = StringVar()
         titleText.set("%s" %(partName))
         self.title = Label(self.window,
@@ -1261,7 +1260,7 @@ class InfoButtonBR():
                             font=("Helvetica", 25),
                             wraplength=500)
         self.title.pack(side=TOP)
-        
+
         mainText = StringVar()
         mainText.set("%s" %(partDesc))
         self.mainText = Label(self.window,
@@ -1272,7 +1271,7 @@ class InfoButtonBR():
 
         try:
             partImage = PhotoImage(file=str(partImage))
-            
+
             self.partPhoto =\
             Label(self.window,
                   anchor="center",
@@ -1281,15 +1280,15 @@ class InfoButtonBR():
             self.partPhoto.image = partImage
 
         except Exception as exception:
-            
+
             print(exception)
-            
+
         self.partPhoto.pack()
 
 
-    
-    
-        
+
+
+
 def main():
 
     app = StartScreen()
